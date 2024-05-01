@@ -179,9 +179,6 @@ main {
 .arrivals_grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
   gap: 3rem;
 }
 
@@ -238,4 +235,35 @@ main {
 .arrivals_5 {
   grid-area: 3 / 7 / 7 / 10;
   align-content: end;
+}
+
+/*  */
+/* lenses */
+.lenses_wrapper {
+  width: 100%;
+  display: flex;
+  padding-bottom: 10rem;
+}
+.lenses_item {
+  flex-basis: 50%;
+  display: flex;
+}
+.lenses_item:nth-child(1) {
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 7.5rem;
+}
+.lenses_item:nth-child(2) {
+  display: flex;
+}
+.lenses_circle {
+  position: relative;
+  width: 290px;
+  aspect-ratio: 1;
+  background: var(--primary);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.lenses_circle {
+  object-fit: cover;
 }

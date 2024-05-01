@@ -4,9 +4,11 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
   const { scrollYProgress } = useScroll();
+  const pathname = usePathname();
 
   const [hookedYPostion, setHookedYPosition] = useState(0);
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
@@ -19,10 +21,13 @@ export default function Header() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       className={
-        hookedYPostion > 0.2
-          ? `${styles.header} ${styles.active}`
-          : `${styles.header}`
+        pathname === "/"
+          ? hookedYPostion > 0.2
+            ? `${styles.header} ${styles.active}`
+            : `${styles.header}`
+          : styles.header
       }
+      style={{ position: pathname === "/" ? "fixed" : "relative" }}
     >
       <motion.div className={`${styles.header_inner} container`}>
         <Link href={"/"}>URIA</Link>

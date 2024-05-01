@@ -5,49 +5,18 @@ import styles from "./page.css";
 import Link from "next/link";
 import MainPageItem from "@/components/main/ProductItem";
 import { motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-
-const ArrivalItem = ({
-  url,
-  grid_order,
-  image,
-  title,
-  price,
-  isAnimateOnce = true,
-}) => {
-  return (
-    <Link href={`/${url}`} className={`arrivals_item ${grid_order}`}>
-      {image && (
-        <motion.div
-          initial={{ opacity: 0, x: -100, width: "60%" }}
-          whileInView={{ opacity: 1, x: 0, width: "100%" }}
-          viewport={{ once: isAnimateOnce }}
-          transition={{ duration: 1 }}
-          className="arrivals_image_wrapper"
-        >
-          <Image
-            width={700}
-            height={700}
-            src={image}
-            className="arrivals_image"
-          />
-        </motion.div>
-      )}
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1 }}
-        className="arrivals_body"
-      >
-        <p className="about_body">{title}</p>
-        {price && <p className="about_body arrivals_price">{price}</p>}
-      </motion.span>
-    </Link>
-  );
-};
+import { useEffect, useRef } from "react";
+import ArrivalItem from "@/components/main/ArrivalItem";
 
 export default function Home() {
+  const myRef = useRef(null);
+  const executeScroll = () => {
+    myRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const isAnimateInfinite = true;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="">
@@ -79,16 +48,15 @@ export default function Home() {
               Like Never Before
             </motion.p>
           </div>
-          <motion.div
+          <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="banner_link"
+            className="about_link"
+            onClick={executeScroll}
           >
-            <Link href={"/"} className="">
-              New Arrivals
-            </Link>
-          </motion.div>
+            New Arrivals
+          </motion.button>
         </div>
         <motion.div
           initial={{ x: 50, opacity: 0 }}
@@ -144,9 +112,51 @@ export default function Home() {
             sets us apart. So, welcome to URIA, where Korean spirit meets a
             fresh vision. It's a whole new view for your eyes.
           </p>
-          <Link href={"/"} className="about_link">
+          <Link href={"/brand"} className="about_link">
             Read More
           </Link>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5, y: 0 }}
+        viewport={{ once: isAnimateInfinite }}
+        className="arrivals_wrapper container"
+        ref={myRef}
+      >
+        <p className="about_title">New Arrivals</p>
+        <div className="arrivals_grid">
+          <ArrivalItem
+            grid_order="arrivals_1"
+            url="serum brown"
+            image="/item/thumb-7IS465867iM65287Jq0_500x500.jpg"
+            title="Serum Brown"
+            price="$26.20"
+          />
+          <ArrivalItem
+            grid_order="arrivals_2"
+            image="/item/thumb-7Jyg66as7JWM7IOB7ZKI7J206647KeA66y867mb_500x500.jpg"
+            title="Mul Grey"
+            price="$27.90"
+          />
+          <ArrivalItem
+            grid_order="arrivals_3"
+            image="/item/thumb-66Gc7JaE67iM65287Jq0_500x500.jpg"
+            title="Royal Brown"
+            price="$26.20"
+          />
+          <ArrivalItem
+            grid_order="arrivals_4"
+            image="/item/thumb-7Ja86re466CI7J20_500x500.jpg"
+            title="Earl Grey"
+            price="$26.20"
+          />
+
+          <div className="arrivals_item arrivals_5">
+            <p className="about_body about_link">See More</p>
+          </div>
         </div>
       </motion.div>
 
@@ -192,38 +202,28 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, y: 0 }}
         viewport={{ once: isAnimateInfinite }}
-        className="arrivals_wrapper container"
+        className="lenses_wrapper container"
       >
-        <p className="about_title">New Arrivals</p>
-        <div className="arrivals_grid">
-          <ArrivalItem
-            grid_order="arrivals_1"
-            url="serum brown"
-            image="/item/thumb-7IS465867iM65287Jq0_500x500.jpg"
-            title="Serum Brown"
-            price="$26.20"
-          />
-          <ArrivalItem
-            grid_order="arrivals_2"
-            image="/item/thumb-7Jyg66as7JWM7IOB7ZKI7J206647KeA66y867mb_500x500.jpg"
-            title="Mul Grey"
-            price="$27.90"
-          />
-          <ArrivalItem
-            grid_order="arrivals_3"
-            image="/item/thumb-66Gc7JaE67iM65287Jq0_500x500.jpg"
-            title="Royal Brown"
-            price="$26.20"
-          />
-          <ArrivalItem
-            grid_order="arrivals_4"
-            image="/item/thumb-7Ja86re466CI7J20_500x500.jpg"
-            title="Earl Grey"
-            price="$26.20"
-          />
-
-          <div className="arrivals_item arrivals_5">
-            <p className="about_body about_link">See More</p>
+        <div className="lenses_item">
+          <div className="about_title">Try Our Lenses</div>
+          <div className="about_body">
+            Discover how different lens options enhance your vision and
+            complement your look. Experiment with colors, styles, and
+            prescriptions to find your perfect match before making a purchase.
+            It's time to see the world through lenses that reflect your unique
+            personality and needs.
+          </div>
+          <div className="about_link">Try Now</div>
+        </div>
+        <div className="lenses_item">
+          <div className="lenses_circle">
+            <Image src={"/sec_mov_b1.png"} fill />
+          </div>
+          <div className="lenses_circle">
+            <Image src={"/sec_mov_b1.png"} fill />
+          </div>
+          <div className="lenses_circle">
+            <Image src={"/sec_mov_b1.png"} fill />
           </div>
         </div>
       </motion.div>

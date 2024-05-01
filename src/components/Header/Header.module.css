@@ -1,6 +1,5 @@
 .header {
   width: 100%;
-  position: fixed;
   padding: 2rem 1rem;
   z-index: 50;
   transition: all 0.2s;
