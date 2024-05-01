@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 const ArrivalItem = ({
+  url,
   grid_order,
   image,
   title,
@@ -15,7 +16,7 @@ const ArrivalItem = ({
   isAnimateOnce = true,
 }) => {
   return (
-    <div className={`arrivals_item ${grid_order}`}>
+    <Link href={`/${url}`} className={`arrivals_item ${grid_order}`}>
       {image && (
         <motion.div
           initial={{ opacity: 0, x: -100, width: "60%" }}
@@ -41,7 +42,7 @@ const ArrivalItem = ({
         <p className="about_body">{title}</p>
         {price && <p className="about_body arrivals_price">{price}</p>}
       </motion.span>
-    </div>
+    </Link>
   );
 };
 
@@ -109,7 +110,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2, y: 0 }}
+        transition={{ duration: 1, delay: 0.5, y: 0 }}
         viewport={{ once: isAnimateInfinite }}
         className="products_wrapper container"
       >
@@ -125,7 +126,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: isAnimateInfinite }}
         className="about_wrapper container"
       >
@@ -152,7 +153,7 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2, y: 0 }}
+        transition={{ duration: 1, delay: 0.5, y: 0 }}
         viewport={{ once: isAnimateInfinite }}
         className="opticlear_wrapper container"
       >
@@ -186,39 +187,46 @@ export default function Home() {
         </div>
       </motion.div>
 
-      <div className="arrivals_wrapper container">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5, y: 0 }}
+        viewport={{ once: isAnimateInfinite }}
+        className="arrivals_wrapper container"
+      >
         <p className="about_title">New Arrivals</p>
         <div className="arrivals_grid">
           <ArrivalItem
             grid_order="arrivals_1"
-            image="/sec_mov_b2.png"
-            title="SKY IS"
-            price="$27.90"
+            url="serum brown"
+            image="/item/thumb-7IS465867iM65287Jq0_500x500.jpg"
+            title="Serum Brown"
+            price="$26.20"
           />
           <ArrivalItem
             grid_order="arrivals_2"
-            image="/sec_mov_b2.png"
-            title="SKY IS"
+            image="/item/thumb-7Jyg66as7JWM7IOB7ZKI7J206647KeA66y867mb_500x500.jpg"
+            title="Mul Grey"
             price="$27.90"
           />
           <ArrivalItem
             grid_order="arrivals_3"
-            image="/sec_mov_b2.png"
-            title="SKY IS"
-            price="$27.90"
+            image="/item/thumb-66Gc7JaE67iM65287Jq0_500x500.jpg"
+            title="Royal Brown"
+            price="$26.20"
           />
           <ArrivalItem
             grid_order="arrivals_4"
-            image="/sec_mov_b2.png"
-            title="SKY IS"
-            price="$27.90"
+            image="/item/thumb-7Ja86re466CI7J20_500x500.jpg"
+            title="Earl Grey"
+            price="$26.20"
           />
 
           <div className="arrivals_item arrivals_5">
             <p className="about_body about_link">See More</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 }
