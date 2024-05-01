@@ -191,6 +191,12 @@ main {
   /* height: 550px; */
   position: relative;
   font-weight: 600;
+  padding-bottom: 2.1rem;
+  overflow: hidden;
+}
+.arrivals_item_inner {
+  width: 100%;
+  height: 100%;
 }
 
 .arrivals_image_wrapper {
@@ -211,7 +217,7 @@ main {
 .arrivals_body {
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
+  padding-top: 0.5rem;
 }
 .arrivals_price {
   color: var(--primary);

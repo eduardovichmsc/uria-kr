@@ -7,8 +7,46 @@ import MainPageItem from "@/components/main/ProductItem";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
+const ArrivalItem = ({
+  grid_order,
+  image,
+  title,
+  price,
+  isAnimateOnce = true,
+}) => {
+  return (
+    <div className={`arrivals_item ${grid_order}`}>
+      {image && (
+        <motion.div
+          initial={{ opacity: 0, x: -100, width: "60%" }}
+          whileInView={{ opacity: 1, x: 0, width: "100%" }}
+          viewport={{ once: isAnimateOnce }}
+          transition={{ duration: 1 }}
+          className="arrivals_image_wrapper"
+        >
+          <Image
+            width={700}
+            height={700}
+            src={image}
+            className="arrivals_image"
+          />
+        </motion.div>
+      )}
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        className="arrivals_body"
+      >
+        <p className="about_body">{title}</p>
+        {price && <p className="about_body arrivals_price">{price}</p>}
+      </motion.span>
+    </div>
+  );
+};
+
 export default function Home() {
-  const isAnimateInfinite = false;
+  const isAnimateInfinite = true;
 
   return (
     <main className="">
@@ -151,62 +189,31 @@ export default function Home() {
       <div className="arrivals_wrapper container">
         <p className="about_title">New Arrivals</p>
         <div className="arrivals_grid">
-          <div className="arrivals_item arrivals_1">
-            <div className="arrivals_image_wrapper">
-              <Image
-                width={700}
-                height={700}
-                src={"/sec_mov_b1.png"}
-                className="arrivals_image"
-              />
-            </div>
-            <span className="arrivals_body">
-              <p className="about_body">EYE IS</p>
-              <p className="about_body arrivals_price">$27.90</p>
-            </span>
-          </div>
-          <div className="arrivals_item arrivals_2">
-            <div className="arrivals_image_wrapper">
-              <Image
-                width={700}
-                height={700}
-                src={"/sec_mov_b1.png"}
-                className="arrivals_image"
-              />
-            </div>
-            <span className="arrivals_body">
-              <p className="about_body">EYE IS</p>
-              <p className="about_body arrivals_price">$27.90</p>
-            </span>
-          </div>
-          <div className="arrivals_item arrivals_3">
-            <div className="arrivals_image_wrapper">
-              <Image
-                width={700}
-                height={700}
-                src={"/sec_mov_b1.png"}
-                className="arrivals_image"
-              />
-            </div>
-            <span className="arrivals_body">
-              <p className="about_body">EYE IS</p>
-              <p className="about_body arrivals_price">$27.90</p>
-            </span>
-          </div>
-          <div className="arrivals_item arrivals_4">
-            <div className="arrivals_image_wrapper">
-              <Image
-                width={700}
-                height={700}
-                src={"/sec_mov_b1.png"}
-                className="arrivals_image"
-              />
-            </div>
-            <span className="arrivals_body">
-              <p className="about_body">EYE IS</p>
-              <p className="about_body arrivals_price">$27.90</p>
-            </span>
-          </div>
+          <ArrivalItem
+            grid_order="arrivals_1"
+            image="/sec_mov_b2.png"
+            title="SKY IS"
+            price="$27.90"
+          />
+          <ArrivalItem
+            grid_order="arrivals_2"
+            image="/sec_mov_b2.png"
+            title="SKY IS"
+            price="$27.90"
+          />
+          <ArrivalItem
+            grid_order="arrivals_3"
+            image="/sec_mov_b2.png"
+            title="SKY IS"
+            price="$27.90"
+          />
+          <ArrivalItem
+            grid_order="arrivals_4"
+            image="/sec_mov_b2.png"
+            title="SKY IS"
+            price="$27.90"
+          />
+
           <div className="arrivals_item arrivals_5">
             <p className="about_body about_link">See More</p>
           </div>
