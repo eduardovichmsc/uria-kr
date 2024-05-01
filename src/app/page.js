@@ -147,6 +147,71 @@ export default function Home() {
           </div>
         </div>
       </motion.div>
+
+      <div className="arrivals_wrapper container">
+        <p className="about_title">New Arrivals</p>
+        <div className="arrivals_grid">
+          <div className="arrivals_item arrivals_1">
+            <div className="arrivals_image_wrapper">
+              <Image
+                width={700}
+                height={700}
+                src={"/sec_mov_b1.png"}
+                className="arrivals_image"
+              />
+            </div>
+            <span className="arrivals_body">
+              <p className="about_body">EYE IS</p>
+              <p className="about_body arrivals_price">$27.90</p>
+            </span>
+          </div>
+          <div className="arrivals_item arrivals_2">
+            <div className="arrivals_image_wrapper">
+              <Image
+                width={700}
+                height={700}
+                src={"/sec_mov_b1.png"}
+                className="arrivals_image"
+              />
+            </div>
+            <span className="arrivals_body">
+              <p className="about_body">EYE IS</p>
+              <p className="about_body arrivals_price">$27.90</p>
+            </span>
+          </div>
+          <div className="arrivals_item arrivals_3">
+            <div className="arrivals_image_wrapper">
+              <Image
+                width={700}
+                height={700}
+                src={"/sec_mov_b1.png"}
+                className="arrivals_image"
+              />
+            </div>
+            <span className="arrivals_body">
+              <p className="about_body">EYE IS</p>
+              <p className="about_body arrivals_price">$27.90</p>
+            </span>
+          </div>
+          <div className="arrivals_item arrivals_4">
+            <div className="arrivals_image_wrapper">
+              <Image
+                width={700}
+                height={700}
+                src={"/sec_mov_b1.png"}
+                className="arrivals_image"
+              />
+            </div>
+            <span className="arrivals_body">
+              <p className="about_body">EYE IS</p>
+              <p className="about_body arrivals_price">$27.90</p>
+            </span>
+          </div>
+          <div className="arrivals_item arrivals_5">
+            <p className="about_body about_link">See More</p>
+          </div>
+        </div>
+      </div>
     </main>
   );
 }

@@ -19,7 +19,7 @@ export default function Header() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       className={
-        hookedYPostion > 0.33
+        hookedYPostion > 0.2
           ? `${styles.header} ${styles.active}`
           : `${styles.header}`
       }
