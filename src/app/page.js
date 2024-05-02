@@ -96,14 +96,14 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: isAnimateInfinite }}
-        className="about_wrapper container"
+        className={`${styles.about_wrapper} container`}
       >
-        <div className="about_item about_image">
+        <div className={`${styles.about_item} ${styles.about_image}`}>
           <Image fill={true} src={"/main_mov_bg.jpg"} alt="main_mov_bg" />
         </div>
-        <div className="about_item">
+        <div className={styles.about_item}>
           <p className="main-title">Brand Idea</p>
-          <p className="about_body">
+          <p className={styles.about_body}>
             In Korea, URIA is leading the way in lens innovation, blending
             timeless elegance with modern flair. Crafted with care and
             innovative design, our lenses redefine cool. At URIA, we're inviting
@@ -112,7 +112,7 @@ export default function Home() {
             sets us apart. So, welcome to URIA, where Korean spirit meets a
             fresh vision. It's a whole new view for your eyes.
           </p>
-          <Link href={"/brand"} className="about_link">
+          <Link href={"/brand"} className={styles.about_link}>
             Read More
           </Link>
         </div>
@@ -123,11 +123,11 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, y: 0 }}
         viewport={{ once: isAnimateInfinite }}
-        className="arrivals_wrapper container"
+        className={`${styles.arrivals_wrapper} container`}
         ref={myRef}
       >
         <p className="main-title">New Arrivals</p>
-        <div className="arrivals_grid">
+        <div className={styles.arrivals_grid}>
           <ArrivalItem
             grid_order="arrivals_1"
             url="serum brown"
@@ -154,8 +154,10 @@ export default function Home() {
             price="$26.20"
           />
 
-          <div className="arrivals_item arrivals_5">
-            <p className="about_body about_link">See More</p>
+          <div className={`${styles.arrivals_item} arrivals_5`}>
+            <p className={`${styles.about_body} ${styles.about_link}`}>
+              See More
+            </p>
           </div>
         </div>
       </motion.div>
@@ -165,16 +167,16 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, y: 0 }}
         viewport={{ once: isAnimateInfinite }}
-        className="opticlear_wrapper container"
+        className={`${styles.opticlear_wrapper} container`}
       >
-        <div className="opticlear_item">
+        <div className={styles.opticlear_item}>
           <p className="main-title">
             <span style={{ fontSize: "0.75rem", verticalAlign: "top" }}>
               New
             </span>
             OptiClear Technology
           </p>
-          <p className="about_body opticlear_body">
+          <p className={`${styles.about_body} ${styles.opticlear_body}`}>
             We're proud to introduce OptiClear, a revolutionary lens technology
             that redefines precision and clarity. OptiClear utilizes advanced
             nano-particle manipulation to virtually eliminate any imperfections
@@ -185,13 +187,13 @@ export default function Home() {
             distortions and aberrations - with OptiClear, perfect vision is
             finally within reach.
           </p>
-          <span className="about_link"></span>
-          <Link href={"/"} className="about_link">
+          <span className={styles.about_link}></span>
+          <Link href={"/"} className={styles.about_link}>
             See More
           </Link>
         </div>
-        <div className="opticlear_item">
-          <div className="opticlear_image">
+        <div className={styles.opticlear_item}>
+          <div className={styles.opticlear_image}>
             <Image fill={true} src={"/sec_mov_b2.png"} />
           </div>
         </div>
@@ -202,27 +204,27 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: isAnimateInfinite }}
-        className="lenses_wrapper container"
+        className={`${styles.lenses_wrapper} container`}
       >
-        <div className="lenses_item">
+        <div className={styles.lenses_item}>
           <div className="main-title">Try Our Lenses</div>
-          <div className="about_body">
+          <div className={styles.about_body}>
             Discover how different lens options enhance your vision and
             complement your look. Experiment with colors, styles, and
             prescriptions to find your perfect match before making a purchase.
             It's time to see the world through lenses that reflect your unique
             personality and needs.
           </div>
-          <div className="about_link">Try Now</div>
+          <div className={styles.about_link}>Try Now</div>
         </div>
-        <div className="lenses_item">
-          <div className="lenses_circle">
+        <div className={styles.lenses_item}>
+          <div className={styles.lenses_circle}>
             <Image src={"/sec_mov_b1.png"} fill />
           </div>
-          <div className="lenses_circle">
+          <div className={styles.lenses_circle}>
             <Image src={"/sec_mov_b1.png"} fill />
           </div>
-          <div className="lenses_circle">
+          <div className={styles.lenses_circle}>
             <Image src={"/sec_mov_b1.png"} fill />
           </div>
         </div>

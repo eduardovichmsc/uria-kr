@@ -1,0 +1,66 @@
+/*  */
+/* arrivals */
+.arrivals_wrapper {
+  width: 100%;
+}
+
+.arrivals_grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 3rem;
+}
+
+.arrivals_item {
+  width: 100%;
+  aspect-ratio: 1;
+  /* height: 550px; */
+  position: relative;
+  font-weight: 600;
+  padding-bottom: 2.1rem;
+  overflow: hidden;
+}
+.arrivals_item_inner {
+  width: 100%;
+  height: 100%;
+}
+
+.arrivals_image_wrapper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.arrivals_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.2s;
+}
+.arrivals_item:hover .arrivals_image {
+  transform: scale(1.1);
+}
+.arrivals_body {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+.arrivals_price {
+  color: var(--primary);
+}
+
+.arrivals_1 {
+  grid-area: 1 / 1 / 4 / 4;
+}
+.arrivals_2 {
+  grid-area: 1 / 4 / 3 / 6;
+}
+.arrivals_3 {
+  grid-area: 1 / 7 / 4 / 10;
+}
+.arrivals_4 {
+  grid-area: 3 / 4 / 7 / 7;
+}
+.arrivals_5 {
+  grid-area: 3 / 7 / 7 / 10;
+  align-content: end;
+}

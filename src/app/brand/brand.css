@@ -85,11 +85,24 @@
   line-height: 1.3rem;
   width: 100%;
   display: flex;
+  justify-content: space-between;
+  gap: 4rem;
 }
 .faqs_item {
-  flex-basis: 50%;
+  padding-top: 5rem;
 }
-
+.faqs_item:first-child {
+  flex-basis: 60%;
+}
+.faqs_item:last-child {
+  flex-basis: 40%;
+}
+.faqs_image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 800px;
+}
 .q_item {
   position: relative;
   width: 100%;

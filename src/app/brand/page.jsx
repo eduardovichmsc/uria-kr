@@ -7,10 +7,11 @@ import Question from "@/components/pages/Brand/Question";
 
 export default function Brand() {
   const [plus, setPlus] = useState(false);
+  const isAnimateInfinite = true;
 
   return (
     <main className="brand main-wrapper">
-      <div className="banner_wrapper">
+      <motion.div className="banner_wrapper">
         <div className="banner_item brand_banner">
           <motion.p
             initial={{ opacity: 0 }}
@@ -33,7 +34,7 @@ export default function Brand() {
             performance to our customers around the globe.
           </motion.p>
         </div>
-        <div
+        <motion.div
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
@@ -45,10 +46,16 @@ export default function Brand() {
             className="banner_image"
             alt="main_L1"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="story_wrapper container">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: isAnimateInfinite }}
+        className="story_wrapper container"
+      >
         <div className="main-title">Our Story</div>
         <div className="story_inner">
           <div className="story_item">
@@ -72,18 +79,24 @@ export default function Brand() {
             endless possibilities.
           </div>
           <div
-            style={{ backgroundImage: "url(/main_mov_bg.jpg)" }}
+            style={{ backgroundImage: "url(/uria-mockup-placeholder.png)" }}
             className="story_image_wrapper"
           >
             {/* image */}
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="faqs_wrapper container">
-        <div className="main-title">FAQs</div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: isAnimateInfinite }}
+        className="faqs_wrapper container"
+      >
         <div className="faqs_inner">
           <div className="faqs_item">
+            <div className="main-title">FAQs</div>
             <Question
               title="Where is URIA based?"
               body="We recommend cleaning your URIA eyewear regularly with a lens cleaning
@@ -125,9 +138,12 @@ export default function Brand() {
               isActive={false}
             />
           </div>
-          <div className="faqs_item"></div>
+          <div
+            className="faqs_item faqs_image"
+            style={{ backgroundImage: "url(/sec_mov_b3.png)" }}
+          ></div>
         </div>
-      </div>
+      </motion.div>
     </main>
   );
 }

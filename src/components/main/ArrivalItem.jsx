@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+import styles from "@/app/Page.module.css";
+import "./ArrivalItem.css";
+
 const ArrivalItem = ({
   url,
   grid_order,
@@ -10,6 +13,7 @@ const ArrivalItem = ({
   price,
   isAnimateOnce = true,
 }) => {
+  console.log(grid_order);
   return (
     <Link href={`/${url}`} className={`arrivals_item ${grid_order}`}>
       {image && (
@@ -35,7 +39,7 @@ const ArrivalItem = ({
         className="arrivals_body"
       >
         <p className="about_body">{title}</p>
-        {price && <p className="about_body arrivals_price">{price}</p>}
+        {price && <p className={`about_body arrivals_price`}>{price}</p>}
       </motion.span>
     </Link>
   );
