@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import "./brand.css";
 import Image from "next/image";
@@ -11,15 +12,15 @@ export default function Brand() {
     <main className="brand main-wrapper">
       <div className="banner_wrapper">
         <div className="banner_item brand_banner">
-          <p
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, height: "max-content" }}
             transition={{ duration: 0.3, delay: 0.6 }}
             className="banner_text brand_title"
           >
             EXPLORE OUR BRAND
-          </p>
-          <p
+          </motion.p>
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, height: "max-content" }}
             transition={{ duration: 0.3, delay: 0.6 }}
@@ -30,7 +31,7 @@ export default function Brand() {
             do. Since our inception, we've been on a mission to revolutionize
             the eyewear industry, delivering unparalleled quality, styles, and
             performance to our customers around the globe.
-          </p>
+          </motion.p>
         </div>
         <div
           initial={{ x: 50, opacity: 0 }}
@@ -39,7 +40,7 @@ export default function Brand() {
           className="banner_item"
         >
           <Image
-            src={"/main-L1.jpg"}
+            src={"/sec_mov_b6.png"}
             fill
             className="banner_image"
             alt="main_L1"
@@ -100,7 +101,7 @@ export default function Brand() {
               isActive={true}
             />
             <Question
-              title="How do I care for my URIA eyewear?"
+              title="Are URIA lenses prescription-ready?"
               body="We recommend cleaning your URIA eyewear regularly with a lens cleaning
         solution and a microfiber cloth to remove dirt, oils, and smudges. Avoid
         using harsh chemicals or abrasive materials, as they may damage the
@@ -108,7 +109,15 @@ export default function Brand() {
               isActive={false}
             />
             <Question
-              title="How do I care for my URIA eyewear?"
+              title="What materials are URIA lenses made of?"
+              body="We recommend cleaning your URIA eyewear regularly with a lens cleaning
+        solution and a microfiber cloth to remove dirt, oils, and smudges. Avoid
+        using harsh chemicals or abrasive materials, as they may damage the
+        lenses or frame."
+              isActive={false}
+            />
+            <Question
+              title="What is URIA's return policy?"
               body="We recommend cleaning your URIA eyewear regularly with a lens cleaning
         solution and a microfiber cloth to remove dirt, oils, and smudges. Avoid
         using harsh chemicals or abrasive materials, as they may damage the

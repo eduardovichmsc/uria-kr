@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./page.css";
+import styles from "./Page.module.css";
 import Link from "next/link";
 import MainPageItem from "@/components/main/ProductItem";
 import { motion } from "framer-motion";
@@ -20,14 +20,14 @@ export default function Home() {
 
   return (
     <main className="main-wrapper">
-      <div className="flex banner_wrapper">
-        <div className="banner_item">
+      <div className={`flex ${styles.banner_wrapper}`}>
+        <div className={styles.banner_item}>
           <div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, height: "max-content" }}
               transition={{ duration: 0.3 }}
-              className="banner_text"
+              className={styles.banner_text}
             >
               See Beyond Beauty:
             </motion.p>
@@ -35,7 +35,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, height: "max-content" }}
               transition={{ duration: 0.3, delay: 0.3 }}
-              className="banner_text"
+              className={styles.banner_text}
             >
               Experience Vision
             </motion.p>
@@ -43,7 +43,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, height: "max-content" }}
               transition={{ duration: 0.3, delay: 0.6 }}
-              className="banner_text"
+              className={styles.banner_text}
             >
               Like Never Before
             </motion.p>
@@ -52,7 +52,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className="about_link"
+            className={styles.about_link}
             onClick={executeScroll}
           >
             New Arrivals
@@ -63,13 +63,13 @@ export default function Home() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
           viewport={{ once: isAnimateInfinite }}
-          className="banner_item"
+          className={styles.banner_item}
         >
           <Image
             src={"/main-L1.jpg"}
             width={785}
             height={600}
-            className="banner_image"
+            className={styles.banner_image}
             alt="main_L1"
           />
         </motion.div>
@@ -80,7 +80,7 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5, y: 0 }}
         viewport={{ once: isAnimateInfinite }}
-        className="products_wrapper container"
+        className={`${styles.products_wrapper} container`}
       >
         <p className="section-title">Products</p>
         <div className="">
