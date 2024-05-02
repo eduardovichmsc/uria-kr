@@ -1,7 +1,7 @@
 import styles from "../page.css";
 export default function Catalog() {
   return (
-    <main className="container">
+    <main className="container main-wrapper">
       <span
         style={{
           display: "flex",

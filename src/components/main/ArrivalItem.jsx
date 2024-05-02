@@ -18,10 +18,10 @@ const ArrivalItem = ({
     <Link href={`/${url}`} className={`arrivals_item ${grid_order}`}>
       {image && (
         <motion.div
-          initial={{ opacity: 0, x: -100, width: "60%" }}
+          initial={{ opacity: 0, x: 0, width: "60%" }}
           whileInView={{ opacity: 1, x: 0, width: "100%" }}
           viewport={{ once: isAnimateOnce }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8 }}
           className="arrivals_image_wrapper"
         >
           <Image
@@ -35,7 +35,7 @@ const ArrivalItem = ({
       <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}
         className="arrivals_body"
       >
         <p className="about_body">{title}</p>

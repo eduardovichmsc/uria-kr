@@ -17,3 +17,7 @@ button {
 .flex {
   display: flex;
 }
+
+.lh-normal {
+  line-height: 1.3rem;
+}

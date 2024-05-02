@@ -10,12 +10,17 @@
 }
 
 .banner_item {
-  flex-basis: 50%;
-  height: 900px;
+  height: 920px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.banner_item:first-child {
+  flex-basis: 57%;
+}
+.banner_item:last-child {
+  flex-basis: 43%;
 }
 .brand_banner {
   padding-right: 7.5rem;
@@ -34,7 +39,6 @@
 }
 .banner_text_secondary {
   margin-top: 1.5rem;
-  line-height: 1.3rem;
 }
 
 .banner_image {
@@ -50,7 +54,6 @@
 }
 .story_inner {
   margin-top: 1.5rem;
-  line-height: 1.3rem;
   width: 75%;
   text-align: justify;
   display: flex;
@@ -82,7 +85,6 @@
 }
 
 .faqs_inner {
-  line-height: 1.3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;

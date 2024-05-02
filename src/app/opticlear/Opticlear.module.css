@@ -3,8 +3,8 @@
   height: 800px;
   position: relative;
 }
-.opticlear_z1,
-.opticlear_z2 {
+.banner_z1,
+.banner_z2 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -13,10 +13,10 @@
   align-items: center;
   justify-content: center;
 }
-.opticlear_z1 {
+.banner_z1 {
   z-index: 10;
 }
-.opticlear_z2 {
+.banner_z2 {
   z-index: 20;
 }
 
@@ -27,13 +27,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.opticlear_title {
+.banner_title {
   font-size: 4rem;
   font-weight: 500;
   color: var(--primary);
   mix-blend-mode: difference;
 }
-.opticlear_body {
+.banner_body {
   margin-top: 1rem;
   font-size: 1rem;
   color: white;
@@ -43,7 +43,6 @@
 /* introduction */
 .introduction_wrapper {
   width: 100%;
-  line-height: 1.3rem;
 }
 .introduction_inner {
   margin-top: 3rem;
@@ -55,4 +54,29 @@
 .introduction_item {
   text-align: justify;
   flex-basis: 50%;
+}
+
+/*  */
+/* opticlear */
+.opticlear_wrapper {
+  width: 100%;
+}
+
+.opticlear_inner {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.opticlear_image_1 {
+  width: 900px;
+  aspect-ratio: 4/3;
+  background: var(--primary);
+}
+.opticlear_text {
+  margin-top: 4rem;
+  max-width: 590px;
+  text-align: center;
+  font-size: 0.9rem;
 }

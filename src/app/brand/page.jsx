@@ -16,7 +16,7 @@ export default function Brand() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, height: "max-content" }}
-            transition={{ duration: 0.3, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             className="banner_text brand_title"
           >
             EXPLORE OUR BRAND
@@ -24,8 +24,8 @@ export default function Brand() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, height: "max-content" }}
-            transition={{ duration: 0.3, delay: 0.6 }}
-            className="banner_text banner_text_secondary"
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="banner_text banner_text_secondary lh-normal"
           >
             We believe that clarity, percision, and innovation are more than
             just words - they're the guiding principles that drive everything we
@@ -57,7 +57,7 @@ export default function Brand() {
         className="story_wrapper container"
       >
         <div className="main-title">Our Story</div>
-        <div className="story_inner">
+        <div className="story_inner lh-normal">
           <div className="story_item">
             Our story begins with a simple yet powerful vision: to redefine the
             eyewear industry by combining innovation, craftsmanship, ad style.
@@ -94,7 +94,7 @@ export default function Brand() {
         viewport={{ once: isAnimateInfinite }}
         className="faqs_wrapper container"
       >
-        <div className="faqs_inner">
+        <div className="faqs_inner lh-normal">
           <div className="faqs_item">
             <div className="main-title">FAQs</div>
             <Question

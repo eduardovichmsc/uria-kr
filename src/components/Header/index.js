@@ -23,7 +23,7 @@ export default function Header() {
       className={
         pathname === "/" || pathname === "/brand"
           ? hookedYPostion > 0.2
-            ? `${styles.header} ${styles.active}`
+            ? `${styles.header} ${styles.scrolled}`
             : `${styles.header}`
           : styles.header
       }
