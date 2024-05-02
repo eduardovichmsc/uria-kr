@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
+    <main className="main-wrapper">
       <div className="flex banner_wrapper">
         <div className="banner_item">
           <div>
@@ -102,7 +102,7 @@ export default function Home() {
           <Image fill={true} src={"/main_mov_bg.jpg"} alt="main_mov_bg" />
         </div>
         <div className="about_item">
-          <p className="about_title">Brand Idea</p>
+          <p className="main-title">Brand Idea</p>
           <p className="about_body">
             In Korea, URIA is leading the way in lens innovation, blending
             timeless elegance with modern flair. Crafted with care and
@@ -126,7 +126,7 @@ export default function Home() {
         className="arrivals_wrapper container"
         ref={myRef}
       >
-        <p className="about_title">New Arrivals</p>
+        <p className="main-title">New Arrivals</p>
         <div className="arrivals_grid">
           <ArrivalItem
             grid_order="arrivals_1"
@@ -168,7 +168,7 @@ export default function Home() {
         className="opticlear_wrapper container"
       >
         <div className="opticlear_item">
-          <p className="about_title">
+          <p className="main-title">
             <span style={{ fontSize: "0.75rem", verticalAlign: "top" }}>
               New
             </span>
@@ -200,12 +200,12 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.5, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
         viewport={{ once: isAnimateInfinite }}
         className="lenses_wrapper container"
       >
         <div className="lenses_item">
-          <div className="about_title">Try Our Lenses</div>
+          <div className="main-title">Try Our Lenses</div>
           <div className="about_body">
             Discover how different lens options enhance your vision and
             complement your look. Experiment with colors, styles, and

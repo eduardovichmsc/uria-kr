@@ -21,13 +21,16 @@ export default function Header() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       className={
-        pathname === "/"
+        pathname === "/" || pathname === "/brand"
           ? hookedYPostion > 0.2
             ? `${styles.header} ${styles.active}`
             : `${styles.header}`
           : styles.header
       }
-      style={{ position: pathname === "/" ? "fixed" : "relative" }}
+      style={{
+        position:
+          pathname === "/" || pathname === "/brand" ? "fixed" : "relative",
+      }}
     >
       <motion.div className={`${styles.header_inner} container`}>
         <Link href={"/"}>URIA</Link>

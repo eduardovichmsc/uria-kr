@@ -1,8 +1,18 @@
 import styles from "../page.css";
 export default function Catalog() {
   return (
-    <div className="container">
-      <p className="about_title"> Catalog </p>
-    </div>
+    <main className="container">
+      <span
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <p className="main-title"> Catalog </p>
+        <p className=""> Filters </p>
+      </span>
+      <div className="catalog_grid"></div>
+    </main>
   );
 }

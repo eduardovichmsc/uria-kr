@@ -25,11 +25,13 @@ const Footer = () => {
         </div>
         <nav className={styles.nav}>
           <Link href={"/"}>Home</Link>
-          <Link href={"/"}>Catalog</Link>
-          <Link href={"/"}>OptiClear</Link>
-          <Link href={"/"}>Brand</Link>
+          <Link href={"/catalog"}>Catalog</Link>
+          <Link href={"/opticlear"}>OptiClear</Link>
+          <Link href={"/brand"}>Brand</Link>
         </nav>
-        <span className={styles.copyright}>© 2024</span>
+        <a href="mailto:business@uria.co.kr" className={styles.copyright}>
+          business@uria.co.kr
+        </a>
       </div>
     </footer>
   );
