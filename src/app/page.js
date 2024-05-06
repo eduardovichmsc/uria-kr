@@ -25,7 +25,7 @@ export default function Home() {
           <div>
             <motion.p
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, height: "max-content" }}
+              whileInView={{ opacity: 1, height: "max-content" }}
               transition={{ duration: 0.3 }}
               className={styles.banner_text}
             >
@@ -63,16 +63,9 @@ export default function Home() {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
           viewport={{ once: isAnimateInfinite }}
-          className={styles.banner_item}
-        >
-          <Image
-            src={"/main-L1.jpg"}
-            width={785}
-            height={600}
-            className={styles.banner_image}
-            alt="main_L1"
-          />
-        </motion.div>
+          className={`${styles.banner_item} ${styles.banner_image} bg-image`}
+          style={{ backgroundImage: "url(/sec_mov_b2.jpg)" }}
+        ></motion.div>
       </div>
 
       <motion.div
@@ -194,7 +187,7 @@ export default function Home() {
         </div>
         <div className={styles.opticlear_item}>
           <div className={styles.opticlear_image}>
-            <Image fill={true} src={"/sec_mov_b2.png"} />
+            <Image fill={true} src={"/sec_mov_b2.jpg"} />
           </div>
         </div>
       </motion.div>

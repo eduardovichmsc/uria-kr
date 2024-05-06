@@ -70,3 +70,9 @@ body {
   height: 1px;
   background: var(--primary);
 }
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

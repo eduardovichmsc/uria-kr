@@ -9,15 +9,24 @@ export default function Opticlear() {
             className={styles.banner_image}
             style={{ backgroundImage: "url(/main_L3.jpg)" }}
           ></div>
-          <Link href={"/catalog"} className="section-link">
-            Try Lenses
-          </Link>
         </div>
         <div className={styles.banner_z2}>
-          <p className={styles.banner_title}>OptiClear and OptiCraft</p>
+          <p
+            className={styles.banner_title}
+            data-text="OptiClear And OptiCraft"
+          >
+            OptiClear And OptiCraft
+          </p>
           <p className={styles.banner_body}>
             "Transforming The Way You See The World"
           </p>
+          <Link
+            href={"/catalog/id"}
+            className="section-link"
+            style={{ position: "absolute", bottom: "-2rem" }}
+          >
+            Try Lenses
+          </Link>
         </div>
       </div>
       <div className={`${styles.introduction_wrapper} container`}>
@@ -61,8 +70,82 @@ export default function Opticlear() {
               - a revolutionary instrument that sets new standards for lens
               manufacturing.
             </p>
+          </div>
+        </div>
+      </div>
 
-            <div className=""></div>
+      <div className={`${styles.reviews_wrapper} container`}>
+        <p className="main-title">OptiClear Reviews</p>
+        <div className={styles.reviews_inner}>
+          <div className={`${styles.reviews_item} lh-normal`}>
+            <span className={styles.reviews_inline}>
+              <p className={styles.reviews_author}>Kim Jiyeon</p>
+              <p className={styles.reviews_date}>March 2024</p>
+            </span>
+            <p className={styles.reviews_body}>
+              Absolutely blow away by the clarity and precision of URIA's
+              OptClear lenses! As someone who's always struggled with vision
+              issues, these lenses have completely transformed my sight. The
+              attention to details and craftsmanship behind OptiCraft is truly
+              remarkable. Highly recommend for anyone looking for top-notch
+              eyewear!
+            </p>
+          </div>
+
+          <div className={`${styles.reviews_item} lh-normal`}>
+            <span className={styles.reviews_inline}>
+              <p className={styles.reviews_author}>Kim Jiyeon</p>
+              <p className={styles.reviews_date}>March 2024</p>
+            </span>
+            <p className={styles.reviews_body}>
+              Absolutely blow away by the clarity and precision of URIA's
+              OptClear lenses! As someone who's always struggled with vision
+              issues, these lenses have completely transformed my sight. The
+              attention to details and craftsmanship behind OptiCraft is truly
+              remarkable. Highly recommend for anyone looking for top-notch
+              eyewear!
+            </p>
+          </div>
+
+          <div className={`${styles.reviews_item} lh-normal`}>
+            <span className={styles.reviews_inline}>
+              <p className={styles.reviews_author}>Kim Jiyeon</p>
+              <p className={styles.reviews_date}>March 2024</p>
+            </span>
+            <p className={styles.reviews_body}>
+              Absolutely blow away by the clarity and precision of URIA's
+              OptClear lenses! As someone who's always struggled with vision
+              issues, these lenses have completely transformed my sight. The
+              attention to details and craftsmanship behind OptiCraft is truly
+              remarkable. Highly recommend for anyone looking for top-notch
+              eyewear!
+            </p>
+          </div>
+        </div>
+        <div style={{ width: "100%", marginTop: "1rem" }}>
+          <Link
+            href={"/brand"}
+            className="section-link"
+            style={{ margin: "0 auto" }}
+          >
+            See More
+          </Link>
+        </div>
+      </div>
+
+      <div className={`${styles.try_wrapper} container`}>
+        <p className="main-title">Try OptiClear Now</p>
+        <div className={styles.try_inner}>
+          <div className={styles.try_item}>
+            <div
+              className={`${styles.try_item_image} bg-image`}
+              style={{ backgroundImage: "url(main_L3.jpg)" }}
+            ></div>
+            <span className={styles.opticlear_icon}>OptiClear</span>
+            <div className={styles.try_item_info}>
+              <p className={styles.try_item_title}>EYEIS - Moral Grey</p>
+              <p className={styles.try_item_price}>$26.90</p>
+            </div>
           </div>
         </div>
       </div>

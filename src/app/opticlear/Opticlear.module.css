@@ -28,11 +28,36 @@
   background-repeat: no-repeat;
 }
 .banner_title {
-  font-size: 4rem;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 4.2rem;
   font-weight: 500;
-  color: var(--primary);
-  mix-blend-mode: difference;
+  color: transparent; /* Делаем текст прозрачным */
+  position: relative;
 }
+
+.banner_title:before,
+.banner_title:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to right,
+    var(--primary) 0%,
+    var(--primary) 14.2%,
+    white 14.2%,
+    white 85.92%,
+    var(--primary) 85.92%,
+    var(--primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* При желании добавьте остальные стили для .banner_title, такие как mix-blend-mode и пр. */
+
 .banner_body {
   margin-top: 1rem;
   font-size: 1rem;
@@ -79,4 +104,81 @@
   max-width: 590px;
   text-align: center;
   font-size: 0.9rem;
+}
+
+/*  */
+/* reviews */
+.reviews_wrapper {
+  width: 100%;
+}
+.reviews_inner {
+  margin-top: 3.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviews_item {
+  flex-basis: 28%;
+  border: 2px solid var(--primary);
+  padding: 2rem;
+  letter-spacing: -0.025rem;
+}
+.reviews_inline {
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary);
+}
+.reviews_author {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.reviews_date {
+  font-size: 0.8rem;
+}
+.reviews_body {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+/*  */
+/* try -- items */
+.try_wrapper {
+  width: 100%;
+}
+.try_inner {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.try_item {
+  flex-basis: 19%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+.try_item_image {
+  width: 100%;
+  aspect-ratio: 110/115;
+}
+.try_item_info {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+.try_item_price {
+  color: var(--primary);
+}
+
+.opticlear_icon {
+  background: #a4befb99;
+  color: var(--primary);
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.75rem 1rem;
 }
