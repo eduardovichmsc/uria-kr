@@ -218,6 +218,7 @@
 }
 .lenses_item:nth-child(2) {
   /* display: flex; */
+  /* display: block; */
   display: block;
 }
 .lenses_circle {
@@ -230,8 +231,8 @@
 .lenses_circle:nth-child(1) {
   float: left;
 }
-.lenses_circle:nth-child(3) {
-  float: left;
+.lenses_circle:nth-child(2) {
+  float: right;
 }
 .lenses_circle:nth-child(3) {
   float: right;
