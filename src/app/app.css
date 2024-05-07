@@ -133,7 +133,7 @@ body {
   }
 }
 
-@media (max-width: 821px) {
+@media (max-width: 1025px) {
   .section-link {
     width: 100%;
     text-align: center;

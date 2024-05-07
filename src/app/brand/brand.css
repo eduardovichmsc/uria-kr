@@ -227,6 +227,9 @@
 }
 
 @media (max-width: 651px) {
+  .banner_item {
+    height: 100vh;
+  }
   /* story */
   .story_inner {
     max-width: 100%;
@@ -238,6 +241,7 @@
     flex-basis: 100%;
   }
   .story_image_wrapper {
+    width: 100%;
   }
 
   /* faqs */
