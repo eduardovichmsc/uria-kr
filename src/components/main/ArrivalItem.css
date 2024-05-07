@@ -18,6 +18,7 @@
   font-weight: 600;
   padding-bottom: 2.1rem;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 .arrivals_item_inner {
   width: 100%;
@@ -63,4 +64,18 @@
 .arrivals_5 {
   grid-area: 3 / 7 / 7 / 10;
   align-content: end;
+}
+
+/* media */
+@media (max-width: 821px) {
+  /* arrivals */
+  .arrivals_item {
+    width: 47%;
+  }
+}
+
+@media (max-width: 431px) {
+  .arrivals_item {
+    flex-basis: 100%;
+  }
 }

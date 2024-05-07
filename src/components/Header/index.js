@@ -38,12 +38,8 @@ export default function Header() {
           <span className={styles.menu_line}></span>
           <p>Menu</p>
         </span>
-        <Link
-          href={"/cart"}
-          style={{ display: "flex", gap: "0.3rem", alignItems: "center" }}
-        >
+        <Link href={"/cart"} className={styles.cart_button}>
           <p>Cart</p>
-          <p className={styles.cart_badge}>0</p>
         </Link>
       </motion.div>
     </motion.header>

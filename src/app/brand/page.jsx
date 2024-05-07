@@ -38,15 +38,9 @@ export default function Brand() {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
-          className="banner_item"
-        >
-          <Image
-            src={"/sec_mov_b6.png"}
-            fill
-            className="banner_image"
-            alt="main_L1"
-          />
-        </motion.div>
+          className="banner_item bg-image"
+          style={{ backgroundImage: "url(/sec_mov_b6.png)" }}
+        ></motion.div>
       </motion.div>
 
       <motion.div
@@ -79,8 +73,8 @@ export default function Brand() {
             endless possibilities.
           </div>
           <div
-            style={{ backgroundImage: "url(/uria-mockup-placeholder.png)" }}
             className="story_image_wrapper"
+            style={{ backgroundImage: "url(/uria-mockup-placeholder.png)" }}
           >
             {/* image */}
           </div>

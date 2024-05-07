@@ -7,13 +7,14 @@ import MainPageItem from "@/components/main/ProductItem";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ArrivalItem from "@/components/main/ArrivalItem";
+import { ButtonLink } from "@/components/Button/Button";
 
 export default function Home() {
   const myRef = useRef(null);
   const executeScroll = () => {
     myRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  const isAnimateInfinite = true;
+  const isAnimateOnce = true;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,32 +28,36 @@ export default function Home() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, height: "max-content" }}
               transition={{ duration: 0.3 }}
+              viewport={{ once: isAnimateOnce }}
               className={styles.banner_text}
             >
               See Beyond Beauty:
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, height: "max-content" }}
+              whileInView={{ opacity: 1, height: "max-content" }}
               transition={{ duration: 0.3, delay: 0.3 }}
+              viewport={{ once: isAnimateOnce }}
               className={styles.banner_text}
             >
               Experience Vision
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1, height: "max-content" }}
+              whileInView={{ opacity: 1, height: "max-content" }}
               transition={{ duration: 0.3, delay: 0.6 }}
+              viewport={{ once: isAnimateOnce }}
               className={styles.banner_text}
             >
               Like Never Before
             </motion.p>
           </div>
           <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1 }}
-            className={styles.about_link}
+            viewport={{ once: isAnimateOnce }}
+            className="section-link"
             onClick={executeScroll}
           >
             New Arrivals
@@ -62,17 +67,19 @@ export default function Home() {
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.9 }}
-          viewport={{ once: isAnimateInfinite }}
+          viewport={{ once: isAnimateOnce }}
           className={`${styles.banner_item} ${styles.banner_image} bg-image`}
-          style={{ backgroundImage: "url(/sec_mov_b2.jpg)" }}
-        ></motion.div>
+          style={{ backgroundImage: "url(/main-L2.png)" }}
+        >
+          <button className={styles.banner_button}>See Beyond Beauty</button>
+        </motion.div>
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5, y: 0 }}
-        viewport={{ once: isAnimateInfinite }}
+        viewport={{ once: isAnimateOnce }}
         className={`${styles.products_wrapper} container`}
       >
         <p className="section-title">Products</p>
@@ -88,13 +95,14 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: isAnimateInfinite }}
+        viewport={{ once: isAnimateOnce }}
         className={`${styles.about_wrapper} container`}
       >
-        <div className={`${styles.about_item} ${styles.about_image}`}>
-          <Image fill={true} src={"/main_mov_bg.jpg"} alt="main_mov_bg" />
-        </div>
-        <div className={styles.about_item}>
+        <div
+          className={`${styles.about_item} ${styles.wrapper_item} ${styles.about_image} bg-image`}
+          style={{ backgroundImage: 'url("/main_mov_bg.jpg")' }}
+        ></div>
+        <div className={`${styles.about_item} ${styles.wrapper_item}`}>
           <p className="main-title">Brand Idea</p>
           <p className={styles.about_body}>
             In Korea, URIA is leading the way in lens innovation, blending
@@ -105,9 +113,7 @@ export default function Home() {
             sets us apart. So, welcome to URIA, where Korean spirit meets a
             fresh vision. It's a whole new view for your eyes.
           </p>
-          <Link href={"/brand"} className={styles.about_link}>
-            Read More
-          </Link>
+          <ButtonLink href="/brand" title="Read More" topSpace={true} />
         </div>
       </motion.div>
 
@@ -115,7 +121,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, y: 0 }}
-        viewport={{ once: isAnimateInfinite }}
+        viewport={{ once: isAnimateOnce }}
         className={`${styles.arrivals_wrapper} container`}
         ref={myRef}
       >
@@ -148,9 +154,7 @@ export default function Home() {
           />
 
           <div className={`${styles.arrivals_item} arrivals_5`}>
-            <p className={`${styles.about_body} ${styles.about_link}`}>
-              See More
-            </p>
+            <ButtonLink href="/catalog" title="See More" />
           </div>
         </div>
       </motion.div>
@@ -159,10 +163,10 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5, y: 0 }}
-        viewport={{ once: isAnimateInfinite }}
+        viewport={{ once: isAnimateOnce }}
         className={`${styles.opticlear_wrapper} container`}
       >
-        <div className={styles.opticlear_item}>
+        <div className={`${styles.opticlear_item} ${styles.wrapper_item}`}>
           <p className="main-title">
             <span style={{ fontSize: "0.75rem", verticalAlign: "top" }}>
               New
@@ -180,15 +184,13 @@ export default function Home() {
             distortions and aberrations - with OptiClear, perfect vision is
             finally within reach.
           </p>
-          <span className={styles.about_link}></span>
-          <Link href={"/"} className={styles.about_link}>
-            See More
-          </Link>
+          <ButtonLink href="/opticlear" title="See More" topSpace={true} />
         </div>
-        <div className={styles.opticlear_item}>
-          <div className={styles.opticlear_image}>
-            <Image fill={true} src={"/sec_mov_b2.jpg"} />
-          </div>
+        <div className={`${styles.opticlear_item} ${styles.wrapper_item}`}>
+          <div
+            className={`${styles.opticlear_image} bg-image`}
+            style={{ backgroundImage: "url(/sec_mov_b2.jpg)" }}
+          ></div>
         </div>
       </motion.div>
 
@@ -196,10 +198,10 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        viewport={{ once: isAnimateInfinite }}
+        viewport={{ once: isAnimateOnce }}
         className={`${styles.lenses_wrapper} container`}
       >
-        <div className={styles.lenses_item}>
+        <div className={`${styles.lenses_item} ${styles.wrapper_item}`}>
           <div className="main-title">Try Our Lenses</div>
           <div className={styles.about_body}>
             Discover how different lens options enhance your vision and
@@ -208,18 +210,21 @@ export default function Home() {
             It's time to see the world through lenses that reflect your unique
             personality and needs.
           </div>
-          <div className={styles.about_link}>Try Now</div>
+          <ButtonLink href="/catalog" title="Try Now" topSpace={true} />
         </div>
-        <div className={styles.lenses_item}>
-          <div className={styles.lenses_circle}>
-            <Image src={"/sec_mov_b1.png"} fill />
-          </div>
-          <div className={styles.lenses_circle}>
-            <Image src={"/sec_mov_b1.png"} fill />
-          </div>
-          <div className={styles.lenses_circle}>
-            <Image src={"/sec_mov_b1.png"} fill />
-          </div>
+        <div className={`${styles.lenses_item} ${styles.wrapper_item}`}>
+          <div
+            className={`${styles.lenses_circle} bg-image`}
+            style={{ backgroundImage: "url(/sec_mov_b5.png)" }}
+          ></div>
+          <div
+            className={`${styles.lenses_circle} bg-image`}
+            style={{ backgroundImage: "url(/sec_mov_b5.png)" }}
+          ></div>
+          <div
+            className={`${styles.lenses_circle} bg-image`}
+            style={{ backgroundImage: "url(/sec_mov_b5.png)" }}
+          ></div>
         </div>
       </motion.div>
     </main>

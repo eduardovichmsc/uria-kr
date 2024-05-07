@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./Opticlear.module.css";
+import { ButtonLink } from "@/components/Button/Button";
 export default function Opticlear() {
   return (
     <main className="main-wrapper">
@@ -20,13 +21,11 @@ export default function Opticlear() {
           <p className={styles.banner_body}>
             "Transforming The Way You See The World"
           </p>
-          <Link
-            href={"/catalog/id"}
-            className="section-link"
-            style={{ position: "absolute", bottom: "-2rem" }}
-          >
-            Try Lenses
-          </Link>
+          <ButtonLink
+            href="/catalog"
+            title={"Try Lenses"}
+            style={{ position: "absolute", bottom: "-3vh" }}
+          />
         </div>
       </div>
       <div className={`${styles.introduction_wrapper} container`}>
@@ -122,14 +121,12 @@ export default function Opticlear() {
             </p>
           </div>
         </div>
-        <div style={{ width: "100%", marginTop: "1rem" }}>
-          <Link
-            href={"/brand"}
-            className="section-link"
+        <div style={{ width: "100%", marginTop: "3rem" }}>
+          <ButtonLink
+            href="/catalog"
+            title={"See More"}
             style={{ margin: "0 auto" }}
-          >
-            See More
-          </Link>
+          />
         </div>
       </div>
 
@@ -148,6 +145,12 @@ export default function Opticlear() {
             </div>
           </div>
         </div>
+        <ButtonLink
+          href="/catalog"
+          title="Catalog"
+          style={{ margin: "0 auto" }}
+          topSpace={true}
+        />
       </div>
     </main>
   );

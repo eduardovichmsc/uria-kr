@@ -13,7 +13,6 @@ const ArrivalItem = ({
   price,
   isAnimateOnce = true,
 }) => {
-  console.log(grid_order);
   return (
     <Link href={`/${url}`} className={`arrivals_item ${grid_order}`}>
       {image && (
@@ -22,15 +21,9 @@ const ArrivalItem = ({
           whileInView={{ opacity: 1, height: "100%" }}
           viewport={{ once: isAnimateOnce }}
           transition={{ duration: 0.8 }}
-          className="arrivals_image_wrapper"
-        >
-          <Image
-            width={700}
-            height={700}
-            src={image}
-            className="arrivals_image"
-          />
-        </motion.div>
+          className="arrivals_image_wrapper bg-image"
+          style={{ backgroundImage: `url(${image})` }}
+        ></motion.div>
       )}
       <motion.span
         initial={{ opacity: 0 }}

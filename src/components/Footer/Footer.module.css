@@ -61,3 +61,28 @@
   font-weight: 500;
   letter-spacing: -0.005rem;
 }
+
+/*  */
+/* media */
+@media (max-width: 821px) {
+  .footer_inner {
+    flex-direction: column;
+  }
+  .logo {
+    flex-basis: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .social {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  .nav {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  .copyright {
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
