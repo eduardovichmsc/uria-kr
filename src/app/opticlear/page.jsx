@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./Opticlear.module.css";
-import { ButtonLink } from "@/components/Button/Button";
+import { ButtonLink } from "@/components/Button/ButtonLink";
 export default function Opticlear() {
   return (
     <main className="main-wrapper">

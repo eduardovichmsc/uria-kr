@@ -73,7 +73,7 @@ export default function Brand() {
             endless possibilities.
           </div>
           <div
-            className="story_image_wrapper"
+            className="story_image_wrapper bg-image"
             style={{ backgroundImage: "url(/uria-mockup-placeholder.png)" }}
           >
             {/* image */}

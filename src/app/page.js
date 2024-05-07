@@ -7,7 +7,7 @@ import MainPageItem from "@/components/main/ProductItem";
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ArrivalItem from "@/components/main/ArrivalItem";
-import { ButtonLink } from "@/components/Button/Button";
+import { ButtonLink } from "@/components/Button/ButtonLink";
 
 export default function Home() {
   const myRef = useRef(null);
@@ -113,7 +113,12 @@ export default function Home() {
             sets us apart. So, welcome to URIA, where Korean spirit meets a
             fresh vision. It's a whole new view for your eyes.
           </p>
-          <ButtonLink href="/brand" title="Read More" topSpace={true} />
+          <ButtonLink
+            href="/brand"
+            title="Read More"
+            topSpace={true}
+            className={styles.hide_button}
+          />
         </div>
       </motion.div>
 
@@ -184,7 +189,12 @@ export default function Home() {
             distortions and aberrations - with OptiClear, perfect vision is
             finally within reach.
           </p>
-          <ButtonLink href="/opticlear" title="See More" topSpace={true} />
+          <ButtonLink
+            href="/opticlear"
+            title="See More"
+            topSpace={true}
+            className={styles.hide_button}
+          />
         </div>
         <div className={`${styles.opticlear_item} ${styles.wrapper_item}`}>
           <div

@@ -94,9 +94,6 @@
   flex-basis: 40%;
 }
 .faqs_image {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   height: 800px;
 }
 .q_item {
@@ -233,7 +230,6 @@
   /* story */
   .story_inner {
     max-width: 100%;
-    flex-direction: column;
     gap: 1vw;
   }
   .story_item {
@@ -241,7 +237,8 @@
     flex-basis: 100%;
   }
   .story_image_wrapper {
-    width: 100%;
+    margin-top: 4vw;
+    height: 250px;
   }
 
   /* faqs */

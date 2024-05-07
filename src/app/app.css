@@ -146,6 +146,11 @@ body {
   :root {
     --spacer-large: 0;
   }
+  .main-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 541px) {

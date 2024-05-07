@@ -204,7 +204,6 @@
 .lenses_wrapper {
   width: 100%;
   display: flex;
-  padding-bottom: 10rem;
 }
 .lenses_item {
   flex-basis: 50%;
@@ -217,8 +216,6 @@
   padding-right: var(--spacer-large);
 }
 .lenses_item:nth-child(2) {
-  /* display: flex; */
-  /* display: block; */
   display: block;
 }
 .lenses_circle {
@@ -312,7 +309,7 @@
     flex-direction: column-reverse;
   }
   .about_item {
-    margin-bottom: 2rem;
+    margin-bottom: 4vw;
   }
   .about_item:nth-child(1) {
     height: 300px;
@@ -324,7 +321,7 @@
   }
 
   .opticlear_item:nth-child(1) {
-    margin-bottom: 2rem;
+    margin-bottom: 4vw;
   }
   .opticlear_item:nth-child(2) {
     height: 300px;
@@ -335,11 +332,22 @@
     flex-direction: column;
   }
   .lenses_item {
+    flex-basis: 100%;
+    width: 100%;
     margin-bottom: 2rem;
   }
   .lenses_item:nth-child(2) {
     flex-direction: row;
     gap: 2rem;
     height: 400px;
+  }
+}
+
+@media (max-width: 426px) {
+  .hide_button {
+    display: none;
+  }
+  .lenses_circle {
+    display: none;
   }
 }
