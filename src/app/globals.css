@@ -6,6 +6,7 @@ button {
   font-size: inherit;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .flex {

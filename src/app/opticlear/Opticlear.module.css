@@ -32,7 +32,7 @@
   justify-content: flex-start;
   font-size: 4.2rem;
   font-weight: 500;
-  color: transparent; /* Делаем текст прозрачным */
+  color: transparent;
   position: relative;
 }
 
@@ -55,8 +55,6 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
-
-/* При желании добавьте остальные стили для .banner_title, такие как mix-blend-mode и пр. */
 
 .banner_body {
   margin-top: 1rem;
@@ -88,7 +86,6 @@
 }
 
 .opticlear_inner {
-  margin-top: 5rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -100,7 +97,6 @@
   background: var(--primary);
 }
 .opticlear_text {
-  margin-top: 4rem;
   max-width: 590px;
   text-align: center;
   font-size: 0.9rem;
@@ -118,29 +114,6 @@
   justify-content: space-between;
 }
 
-.reviews_item {
-  flex-basis: 28%;
-  border: 2px solid var(--primary);
-  padding: 2rem;
-  letter-spacing: -0.025rem;
-}
-.reviews_inline {
-  display: flex;
-  justify-content: space-between;
-  color: var(--primary);
-}
-.reviews_author {
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-.reviews_date {
-  font-size: 0.8rem;
-}
-.reviews_body {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  text-align: justify;
-}
 /*  */
 /* try -- items */
 .try_wrapper {

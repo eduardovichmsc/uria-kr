@@ -1,0 +1,23 @@
+.reviews_item {
+  flex-basis: 28%;
+  border: 2px solid var(--primary);
+  padding: 2rem;
+  letter-spacing: -0.025rem;
+}
+.reviews_inline {
+  display: flex;
+  justify-content: space-between;
+  color: var(--primary);
+}
+.reviews_author {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.reviews_date {
+  font-size: 0.8rem;
+}
+.reviews_body {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: justify;
+}

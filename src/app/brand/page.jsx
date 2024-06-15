@@ -1,12 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import "./brand.css";
-import Image from "next/image";
-import Question from "@/components/pages/Brand/Question";
+import Question from "@/components/Question";
 
 export default function Brand() {
-  const [plus, setPlus] = useState(false);
   const isAnimateInfinite = true;
 
   return (

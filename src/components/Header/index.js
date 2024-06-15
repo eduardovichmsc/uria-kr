@@ -21,7 +21,7 @@ export default function Header() {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
       className={
-        pathname === "/" || pathname === "/brand"
+        pathname === "/" || pathname === "/brand" || pathname === "/opticlear"
           ? hookedYPostion > 0.188
             ? `${styles.header} ${styles.scrolled}`
             : `${styles.header}`
@@ -29,7 +29,9 @@ export default function Header() {
       }
       style={{
         position:
-          pathname === "/" || pathname === "/brand" ? "fixed" : "relative",
+          pathname === "/" || pathname === "/brand" || pathname === "opticlear"
+            ? "fixed"
+            : "relative",
       }}
     >
       <motion.div className={`${styles.header_inner} container`}>

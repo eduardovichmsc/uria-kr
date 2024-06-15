@@ -1,10 +1,21 @@
-import Link from "next/link";
+"use client";
 import styles from "./Opticlear.module.css";
 import { ButtonLink } from "@/components/Button/ButtonLink";
+import Review from "@/components/Review";
+import { motion } from "framer-motion";
+
 export default function Opticlear() {
+  const isAnimateInfinite = true;
   return (
     <main className="main-wrapper">
-      <div className={styles.banner_wrapper}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: isAnimateInfinite }}
+        exit={{ opacity: 0 }}
+        className={styles.banner_wrapper}
+      >
         <div className={styles.banner_z1}>
           <div
             className={styles.banner_image}
@@ -27,8 +38,14 @@ export default function Opticlear() {
             style={{ position: "absolute", bottom: "-3vh" }}
           />
         </div>
-      </div>
-      <div className={`${styles.introduction_wrapper} container`}>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: isAnimateInfinite }}
+        className={`${styles.introduction_wrapper} container`}
+      >
         <p className="main-title">Introduction</p>
         <div className={`${styles.introduction_inner} lh-normal`}>
           <div className={styles.introduction_item}>
@@ -56,11 +73,16 @@ export default function Opticlear() {
             unparalleled clarity and precision.
           </div>
         </div>
-      </div>
-      <div className={`${styles.opticlear_wrapper} container`}>
-        <p className="main-title">OptiClear</p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: isAnimateInfinite }}
+        className={`${styles.opticlear_wrapper} container`}
+      >
         <div className={styles.opticlear_inner}>
-          <div className={styles.opticlear_image_1}></div>
           <div className={styles.opticlear_text}>
             <p className="main-title">OptiCraft Engine</p>
             <p className="lh-normal">
@@ -71,55 +93,37 @@ export default function Opticlear() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className={`${styles.reviews_wrapper} container`}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: isAnimateInfinite }}
+        className={`${styles.reviews_wrapper} container`}
+      >
         <p className="main-title">OptiClear Reviews</p>
         <div className={styles.reviews_inner}>
-          <div className={`${styles.reviews_item} lh-normal`}>
-            <span className={styles.reviews_inline}>
-              <p className={styles.reviews_author}>Kim Jiyeon</p>
-              <p className={styles.reviews_date}>March 2024</p>
-            </span>
-            <p className={styles.reviews_body}>
-              Absolutely blow away by the clarity and precision of URIA's
+          <Review
+            author="Kim Jiyeon"
+            date="March 2024"
+            body="Absolutely blow away by the clarity and precision of URIA's
               OptClear lenses! As someone who's always struggled with vision
               issues, these lenses have completely transformed my sight. The
               attention to details and craftsmanship behind OptiCraft is truly
               remarkable. Highly recommend for anyone looking for top-notch
-              eyewear!
-            </p>
-          </div>
-
-          <div className={`${styles.reviews_item} lh-normal`}>
-            <span className={styles.reviews_inline}>
-              <p className={styles.reviews_author}>Kim Jiyeon</p>
-              <p className={styles.reviews_date}>March 2024</p>
-            </span>
-            <p className={styles.reviews_body}>
-              Absolutely blow away by the clarity and precision of URIA's
-              OptClear lenses! As someone who's always struggled with vision
-              issues, these lenses have completely transformed my sight. The
-              attention to details and craftsmanship behind OptiCraft is truly
-              remarkable. Highly recommend for anyone looking for top-notch
-              eyewear!
-            </p>
-          </div>
-
-          <div className={`${styles.reviews_item} lh-normal`}>
-            <span className={styles.reviews_inline}>
-              <p className={styles.reviews_author}>Kim Jiyeon</p>
-              <p className={styles.reviews_date}>March 2024</p>
-            </span>
-            <p className={styles.reviews_body}>
-              Absolutely blow away by the clarity and precision of URIA's
-              OptClear lenses! As someone who's always struggled with vision
-              issues, these lenses have completely transformed my sight. The
-              attention to details and craftsmanship behind OptiCraft is truly
-              remarkable. Highly recommend for anyone looking for top-notch
-              eyewear!
-            </p>
-          </div>
+              eyewear!"
+          />
+          <Review
+            author="Jiwon Lee"
+            date="February 2024"
+            body="URIA's OptiClear lenses are truly amazing! I've always struggled with vision issues, but these lenses have completely changed my perspective. I'm impressed by the attention to detail and craftsmanship behind OptiCraft. Thanks to URIA's innovation! I recommend it to people who are struggling and can't find perfect ones, these ones are perfect!"
+          />
+          <Review
+            author="Park Junho"
+            date="January 2024"
+            body="I've tried numerous lenses over the years, but nothing comes close to the clarity and comfort of URIA. The OptiCraft Precision Engine is a game-changer - you can really feel the ifference in quality. URIA's commitment to innovation shows through in every aspect of their technology. Couldn't be happier with my new lenses!"
+          />
         </div>
         <div style={{ width: "100%", marginTop: "3rem" }}>
           <ButtonLink
@@ -128,9 +132,15 @@ export default function Opticlear() {
             style={{ margin: "0 auto" }}
           />
         </div>
-      </div>
+      </motion.div>
 
-      <div className={`${styles.try_wrapper} container`}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: isAnimateInfinite }}
+        className={`${styles.try_wrapper} container`}
+      >
         <p className="main-title">Try OptiClear Now</p>
         <div className={styles.try_inner}>
           <div className={styles.try_item}>
@@ -151,7 +161,7 @@ export default function Opticlear() {
           style={{ margin: "0 auto" }}
           topSpace={true}
         />
-      </div>
+      </motion.div>
     </main>
   );
 }

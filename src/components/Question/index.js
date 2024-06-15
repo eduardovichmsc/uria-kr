@@ -1,4 +1,5 @@
 "use client";
+import "./question.css";
 import { useState } from "react";
 
 const Question = ({ title, body, isActive }) => {

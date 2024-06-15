@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./Page.module.css";
 import Link from "next/link";
 import MainPageItem from "@/components/main/ProductItem";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import ArrivalItem from "@/components/main/ArrivalItem";
 import { ButtonLink } from "@/components/Button/ButtonLink";
@@ -23,35 +23,38 @@ export default function Home() {
     <main className="main-wrapper">
       <div className={`flex ${styles.banner_wrapper}`}>
         <div className={styles.banner_item}>
-          <div>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, height: "max-content" }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: isAnimateOnce }}
-              className={styles.banner_text}
-            >
-              See Beyond Beauty:
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, height: "max-content" }}
-              transition={{ duration: 0.3, delay: 0.3 }}
-              viewport={{ once: isAnimateOnce }}
-              className={styles.banner_text}
-            >
-              Experience Vision
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, height: "max-content" }}
-              transition={{ duration: 0.3, delay: 0.6 }}
-              viewport={{ once: isAnimateOnce }}
-              className={styles.banner_text}
-            >
-              Like Never Before
-            </motion.p>
-          </div>
+          <AnimatePresence>
+            <div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, height: "max-content" }}
+                transition={{ duration: 0.3 }}
+                exit={{ opacity: 0 }}
+                viewport={{ once: isAnimateOnce }}
+                className={styles.banner_text}
+              >
+                See Beyond Beauty:
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, height: "max-content" }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+                viewport={{ once: isAnimateOnce }}
+                className={styles.banner_text}
+              >
+                Experience Vision
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, height: "max-content" }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+                viewport={{ once: isAnimateOnce }}
+                className={styles.banner_text}
+              >
+                Like Never Before
+              </motion.p>
+            </div>
+          </AnimatePresence>
           <motion.button
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
