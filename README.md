@@ -7,5 +7,4 @@ Reference: ['URIA / Behance'](https://www.behance.net/gallery/196479691/URIA-Tra
 npm run dev
 ```
 
-There's only frontend
-For backend: ['link']
+!There's only frontend
