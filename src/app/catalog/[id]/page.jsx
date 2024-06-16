@@ -15,6 +15,9 @@ export default function productPage() {
   const [productCount, setProductCount] = useState(1);
   const [countError, setCountError] = useState("");
 
+  const [righteye, setRighteye] = useState(0);
+  const [lefteye, setLefteye] = useState(0);
+
   const fetchProduct = async () => {
     try {
       const res = await axios.get(
@@ -41,6 +44,12 @@ export default function productPage() {
     setProductCount((prev) => prev + value);
   };
 
+  const sendToCart = async () => {
+    console.log(lefteye);
+    console.log(righteye);
+    console.log(productCount);
+  };
+
   useEffect(() => {
     fetchProduct();
   }, []);
@@ -52,11 +61,8 @@ export default function productPage() {
     <div className="container main-wrapper">
       <div style={{ display: "flex", flexDirection: "column", gap: "2vh" }}>
         <div className="breadcrumb">
-          <Link href={"/"} className="breadcrumb_item">
-            Home
-          </Link>
           <Link href={"/catalog"} className="breadcrumb_item">
-            Catalog
+            catalog
           </Link>
           <Link href={"/catalog/" + data.id} className="breadcrumb_item">
             {data.title}
@@ -78,6 +84,7 @@ export default function productPage() {
                 backgroundImage: `url('${
                   data.photos.at(0) || "/sec_mov_b1.jpg"
                 }')`,
+                flexGrow: !data.photos.at(2) && "0",
               }}
             ></div>
             {data.photos.at(2) && (
@@ -94,7 +101,7 @@ export default function productPage() {
           <div className="product_info">
             <p className="product_title">{data.title}</p>
             <p className="product_price">$ {data.price}</p>
-            <p className="product_body">
+            <p className="product_body lh-normal">
               {data.description ||
                 `EYEIS - Amber Glow lenses emanate warmth and sophistication, casting
             a soft golden hue that adds a toch of elegance to your gaze.
@@ -103,18 +110,44 @@ export default function productPage() {
             </p>
 
             <p className="product_key">Description</p>
-            <p className="product_value">OptiClear / Water: 43% / 1 Month</p>
+            <p className="product_value">
+              {data.color.charAt(0).toUpperCase() + data.color.slice(1)} /
+              {data.opticlear && "OptiClear /"} Water: 43% / 1 Month
+            </p>
 
             <p className="product_key">Material</p>
             <p className="product_value">{data.material || `Polycarbonate`}</p>
 
             <p className="product_key">Power *</p>
             <div className="product_value">
-              <select name="left_eye" id="" className="product_eye_select">
-                <option value="default">Left Eye</option>
+              <select
+                name="left_eye"
+                className="product_eye_select"
+                onChange={(e) => setLefteye(e.target.value)}
+                defaultValue="default"
+              >
+                <option value="default" disabled>
+                  Left Eye
+                </option>
+                <option value="-1.0">-1.0</option>
+                <option value="-2.0">-2.0</option>
+                <option value="-3.0">-3.0</option>
+                <option value="-4.0">-4.0</option>
               </select>
-              <select name="right_eye" id="" className="product_eye_select">
-                <option value="default">Right Eye</option>
+
+              <select
+                name="right_eye"
+                className="product_eye_select"
+                onChange={(e) => setRighteye(e.target.value)}
+                defaultValue="default"
+              >
+                <option value="default" disabled>
+                  Right Eye
+                </option>
+                <option value="-1.0">-1.0</option>
+                <option value="-2.0">-2.0</option>
+                <option value="-3.0">-3.0</option>
+                <option value="-4.0">-4.0</option>
               </select>
             </div>
 
@@ -136,7 +169,9 @@ export default function productPage() {
               </button>
             </div>
 
-            <button className="product_add">Add To Cart</button>
+            <button className="product_add" onClick={sendToCart}>
+              Add To Cart
+            </button>
 
             {countError.length !== 0 && (
               <p className="product_count_error">{countError}</p>

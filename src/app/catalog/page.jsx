@@ -5,28 +5,43 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Catalog() {
+  const [isLoading, setIsLoading] = useState(true);
+
   const [data, setData] = useState([]);
-  const [pages, setPages] = useState(0);
+  const [pages, setPages] = useState(1);
   const [limit, setLimit] = useState(0);
 
-  const fetchData = async (page = 1) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const fetchData = async (page) => {
     try {
       const res = await axios.get(
-        process.env.NEXT_PUBLIC_API_URL +
-          "products?_offset=" +
+        `${process.env.NEXT_PUBLIC_API_URL}products?_limit=${limit}&_offset=${
           limit * (page - 1)
+        }`
       );
+      console.log(res);
       setPages(res.data._totalPages);
       setLimit(res.data._limit);
+      if (page > 1) {
+        setData((prev) => [...prev, ...res.data.products]);
+        return;
+      }
       setData(res.data.products);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(currentPage);
   }, []);
+
+  if (isLoading) {
+    return <div className="container main-wrapper">Матье бал</div>;
+  }
 
   return (
     <main className="container main-wrapper">
@@ -66,13 +81,23 @@ export default function Catalog() {
               <CatalogItem
                 key={index}
                 id={item.id}
-                image={item.photos && item.photos.at(0)}
+                image={item.photos && item.photos[0]}
                 title={item.title}
                 price={item.price}
               />
             ))}
         </div>
-        <p>{pages}</p>
+        <button
+          className="catalog_more"
+          onClick={() => {
+            const nextPage = currentPage + 1;
+            setCurrentPage((prev) => prev + 1);
+            fetchData(nextPage);
+          }}
+          disabled={currentPage >= pages}
+        >
+          MORE
+        </button>
       </div>
     </main>
   );
